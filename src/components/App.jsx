@@ -1,10 +1,11 @@
 import { Profile } from './Profile/Profile';
 import { Statistics } from './Statistics/Statistics';
 import { FriendList } from './FriendList/FriendList';
+import { TransactionHistory } from './TransactionHistory/TransactionHistory';
 import user from 'data/user.json';
 import data from 'data/data.json';
 import friends from 'data/friends.json';
-// import transactions from 'data/transactions.json';
+import transactions from 'data/transactions.json';
 import { Container, SectionWrapper } from './App.styled';
 import { Global } from '@emotion/react';
 import { globalStyles } from 'constants/globalStyles';
@@ -26,8 +27,11 @@ export const App = () => {
         <Statistics title="Upload stats" stats={data} />
         <Statistics stats={data} />
       </SectionWrapper>
-      <SectionWrapper bgcColorSection>
+      <SectionWrapper>
         <FriendList friends={friends} />
+      </SectionWrapper>
+      <SectionWrapper>
+        <TransactionHistory transactions={transactions} />
       </SectionWrapper>
     </Container>
   );
